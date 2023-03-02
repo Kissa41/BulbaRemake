@@ -4,32 +4,132 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="brief-style.css">
+    <meta name="description"
+    content="Продакшн-студия полного цикла BulbaMedia. Создание аудио, видео контента. Создание и ведение TikTok аккаунтов." />
+    <meta name="keywords"
+        content="создание видео контента, съемка видео, создание анимированных роликов, съемка с дрона, звукозапись, менеджер тикток, ведение аккаунтов, рекламные ролики" />
+    <meta property="og:url" content="https://bulbamedia.by" />
+    <meta property="og:title" content="BulbaMedia — продакшн-студия полного цикла." />
+    <meta property="og:description"
+        content="Продакшн-студия полного цикла BulbaMedia. Создание аудио, видео контента. Создание и ведение TikTok аккаунтов" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image"
+    content="https://drive.google.com/file/d/1eZOE1cZthgJkWt5rzdPVsi56eeT2svc2/view?usp=sharing" />
+    <link rel="icon" type="image/x-icon" href="/assets/logo-favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/styles/light-mode-styles.css">
+    <link rel="stylesheet" href="/styles/light-mode-styles.css" id="theme"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <script defer src="/scripts/script.js"></script>
     <title>Brief</title>
 </head>
 <body>
-    
-    <section class="brief">
-        <h1 class="brief-name">Brief</h1>
-        <h3 class="brief-description">Take answer for questions about the future project. Our manager will contact you during the day.</h3>
-        <form class="brief-form" action="">
-          <label class="brief-label" for="company-name">Company name</label><br />
-          <input type="text" id="company-name" name="company-name" required minlength="1" maxlength="31" placeholder="Coca-cola" />
-          <label class="brief-label" for="name">Your name</label><br />
-          <input type="text" id="name" name="name" required minlength="1" maxlength="15" placeholder="Uladislav"/>
-          <label class="brief-label" for="email">Your email</label><br />
-          <input type="email" id="email" name="email" required minlength="1" maxlength="31" placeholder="example@gmail.com" />
-          <label class="brief-label" for="phone">Company name</label><br />
-          <input type="tel" id="phone" name="phone" required minlength="1" maxlength="14" placeholder="+421-000-00-00" />
-          <label class="brief-label" for="description">Company name</label><br />
-          <input type="text" id="description" name="description" required minlength="1" maxlength="31" placeholder="What do you want to do?" />
-          <label class="brief-label" for="budget">Whats your budget?</label><br />
-          <input type="text" id="budget" name="budget" required minlength="1" maxlength="31" />
-          <button id="toSend">Send</button>
-        </form>
-        <div class="form-footer">By clicking on the button, you consent to the processing of personal data and agree with the privacy policy</div>
-    </section>
-
+    <div class="brief-nav">
+        <div class="container brief-container">
+            <a class="navbar-brand" href="/index.html">
+              <img src="/assets/logobulba.svg" alt="Company">
+            </a>
+        </div>
+        <div class="theme">
+            <label>
+              <input type="checkbox" id="switchMode" />
+              <span class="check"></span>
+            </label>
+            <div class="theme-icon"></div>
+        </div>
+    </div>
+    <section id="contacts" class="brief">
+        <h1 class="brief-name">Анкета</h1>
+        <h3 class="brief-description">Ответьте, пожалуйста, на вопросы о будущем проекте. Наш менеджер свяжется с вами в течение дня.</h3>
+          <form class="brief-form" action="#" method="post" id="sendform" enctype="multipart/form-data">
+            <div class="brief-item">
+              <label class="brief-label" for="company">Название бренда/компании(деятельность)</label>
+              <input class="brief-input" type="text" id="company" name="company" autocomplete="off" minlength="1" maxlength="60"
+                placeholder="Akpo (бытовая техника)" required/>
+            </div>
+            <div class="brief-item">
+                <label class="brief-label" for="brief-name">ФИО</label>
+                <input class="brief-input" type="text" id="brief-name" name="brief-name" autocomplete="off" minlength="1" maxlength="60"
+                  placeholder="Медведев Дмитрий Анатольевич" required/>
+            </div>
+            <div class="brief-item">
+                <label class="brief-label" for="phone">Телефон</label>
+                <div class="brief-phone-container">
+                  <div class="country-select">
+                    <div id="country-select" class="country-select__code">
+                      <div class="country">
+                        <img id="country-flag"
+                          src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Slovakia.svg" alt="country-flag"/>
+                        <div class="arrow"></div>
+                      </div>
+                      <div id="phone-code" class="phone-code">+421</div>
+                    </div>
+                    <div id="modal" class="country-select__modal"></div>
+                  </div>
+                  <input class="brief-input" type="number" id="phone" name="phone" autocomplete="off" placeholder="(99) 999-99-99" required />
+                </div>
+              </div>
+              <div class="brief-item">
+                <label class="brief-label" for="email">Эл.почта</label>
+                <input class="brief-input _email" type="text" id="email" name="mail" autocomplete="off" minlength="1" maxlength="60" placeholder="primer@gmail.com" required/>
+              </div>
+            <div class="brief-item">
+              <label class="brief-label" for="deadline">Дата выхода материала</label>
+              <input class="brief-input" type="text" id="deadline" name="deadline" autocomplete="off" minlength="1" maxlength="60" placeholder="Январь-февраль 2023" required/>
+            </div>
+            <div class="brief-item">
+              <label class="brief-label" for="material">Вид материала</label>
+              <input class="brief-input" id="material" name="material" autocomplete="off" minlength="1" maxlength="250"
+                placeholder="Фото/видео/пост/сторис/розыгрыш/прямой эфир"/>
+            </div>
+            <div class="brief-item">
+                <label class="brief-label" for="object">Что рекламируем?</label>
+                <input class="brief-input" id="object" name="object" autocomplete="off" minlength="1" maxlength="250"
+                  placeholder="Бренд, открытие шоу-рума, фирменного магазина, бытовой техники"/>
+            </div>
+            <div class="brief-item">
+                <label class="brief-label" for="fitches">Особенность вашего товара или услуги (почему именно у вас)</label>
+                <input class="brief-input" id="fitches" name="fitches" autocomplete="off" minlength="1" maxlength="250"
+                  placeholder="Краткое описание вашей особенности"/>
+            </div>
+            <div class="brief-item">
+                <label class="brief-label" for="subject">ЦА (конечный потребитель)</label>
+                <input class="brief-input" id="subject" name="subject" autocomplete="off" minlength="1" maxlength="250"
+                  placeholder="На кого нацелены ваши услуги/контент?"/>
+            </div>
+            <div class="brief-item brief-item-radio">
+              <label class="brief-label">Формат материала</label>
+              <label class="radio-label">
+                <input type="radio" class="radio option-input" name="format">
+                <div class="radio-text">Графический ролик</div>
+              </label>
+              <label class="radio-label">
+                <input type="radio" class="radio option-input" name="format">
+                <div class="radio-text">Имиджевый ролик</div>
+              </label>
+              <label class="radio-label">
+                <input type="radio" class="radio option-input" name="format">
+                <div class="radio-text">Ведение TikTok</div>
+              </label>
+              <label class="radio-label">
+                <input type="radio" class="radio option-input" name="format">
+                <div class="radio-text">DeepFake</div>
+              </label>
+              <label class="radio-label">
+                <input type="radio" class="radio option-input" name="format">
+                <div class="radio-text">Другое</div>
+              </label>
+            </div>
+            <div class="brief-item">
+                <label class="brief-label" for="desires">Особые пожелания по сценарию (если таковые имеются)</label>
+                <textarea class="brief-input" id="desires" name="desires" autocomplete="off" minlength="1" maxlength="250"></textarea>
+            </div>
+            <input id="briefSend" class="submit-btn brief-button smoothie" type="submit" name="brief-submit" value="Отправить">
+          </form>
+      </section>
 
 </body>
 </html>

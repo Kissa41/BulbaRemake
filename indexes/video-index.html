@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+    content="Продакшн-студия полного цикла BulbaMedia. Создание аудио, видео контента. Создание и ведение TikTok аккаунтов." />
+    <meta name="keywords"
+      content="создание видео контента, съемка видео, создание анимированных роликов, съемка с дрона, звукозапись, менеджер тикток, ведение аккаунтов, рекламные ролики" />
+    <meta property="og:url" content="https://bulbamedia.by" />
+    <meta property="og:title" content="BulbaMedia — продакшн-студия полного цикла." />
+    <meta property="og:description"
+      content="Продакшн-студия полного цикла BulbaMedia. Создание аудио, видео контента. Создание и ведение TikTok аккаунтов" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image"
+    content="https://drive.google.com/file/d/1eZOE1cZthgJkWt5rzdPVsi56eeT2svc2/view?usp=sharing" />
+    <link rel="icon" type="image/x-icon" href="/assets/logo-favicon.svg" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,7 +24,6 @@
     />
     <link rel="stylesheet" href="/styles/light-mode-styles.css" />
     <link rel="stylesheet" href="/styles/light-mode-styles.css" id="theme" />
-    <link rel="icon" type="image/x-icon" href="/assets/logo-favicon.svg" />
     <script defer src="/scripts/script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -26,7 +37,7 @@
       <div class="container-fluid">
         <div class="container">
           <a class="navbar-brand" href="/index.html">
-            <img src="/assets/logobulba.svg" alt="logo" />
+            <img src="/assets/logobulba.svg" alt="Company" />
           </a>
         </div>
         <button
@@ -112,68 +123,48 @@
         </h1>
         <div class="our-contacts">
           <h2>
-            <a class="phone-number" href="tel:+375 29 613-93-81"
-              >+375 29 613-93-81</a
-            >
+            <a class="phone-number" href="tel:+375 29 613-93-81">+375 29 613-93-81</a>
           </h2>
           <h3>
             <a href="mailto:bulbamedia@mail.ru">bulbamedia@mail.ru</a>
           </h3>
         </div>
-        <form class="form" action="">
-          <label for="name">Ваше имя</label><br />
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            minlength="1"
-            maxlength="15"
-            placeholder="Александр"
-          />
-          <label for="phone">Телефон</label><br />
-          <div class="phone-container">
-            <div class="country-select">
-              <div id="country-select" class="country-select__code">
-                <div class="country">
-                  <img
-                    id="country-flag"
-                    src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Slovakia.svg"
-                  />
-                  <div class="arrow"></div>
-                </div>
-                <div id="phone-code" class="phone-code">+421</div>
-              </div>
-              <div id="modal" class="country-select__modal"></div>
-            </div>
-            <input
-              type="number"
-              id="phone"
-              name="phone"
-              required
-              placeholder="(99) 999-99-99"
-            />
+        <form class="form" action="#" method="post" id="sendform" enctype="multipart/form-data">
+          <div class="form-item">
+            <label class="form-label" for="formName">Ваше имя*</label>
+            <input class="form-input _req" type="text" id="formName" name="name" autocomplete="off" minlength="1" maxlength="60"
+              placeholder="Александр" required/>
           </div>
-          <label for="email">Эл.почта</label><br />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="primer@gmail.com"
-          />
-          <label for="comment">Комментарий</label><br />
-          <input
-            type="text"
-            id="comment"
-            name="comment"
-            minlength="1"
-            maxlength="250"
-            placeholder="Что снимаем?"
-          />
-          <button id="toSend">Отправить</button>
+          <div class="form-item">
+            <label class="form-label" for="phone">Телефон*</label>
+            <div class="phone-container">
+              <div class="country-select">
+                <div id="country-select" class="country-select__code">
+                  <div class="country">
+                    <img id="country-flag"
+                      src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Slovakia.svg" alt="country-flag"/>
+                    <div class="arrow"></div>
+                  </div>
+                  <div id="phone-code" class="phone-code">+421</div>
+                </div>
+                <div id="modal" class="country-select__modal"></div>
+              </div>
+              <input class="form-input _req" type="number" id="phone" name="phone" autocomplete="off" placeholder="(99) 999-99-99" required />
+            </div>
+          </div>
+          <div class="form-item">
+            <label class="form-label" for="email">Эл.почта*</label>
+            <input class="form-input _req _email" type="text" id="email" name="mail" autocomplete="off" minlength="1" maxlength="60" placeholder="primer@gmail.com" required/>
+          </div>
+          <div class="form-item">
+            <label class="form-label" for="formMessage">Комментарий</label>
+            <textarea class="form-input" id="formMessage" name="message" autocomplete="off" minlength="1" maxlength="250"
+              placeholder="Что нужно сделать?"></textarea>
+          </div>
+          <input id="toSend" class="submit-btn form-button smoothie" type="submit" name="submit" value="Отправить">
         </form>
       </div>
+      <div class="contacts-img"></div>
     </section>
 
     <footer>

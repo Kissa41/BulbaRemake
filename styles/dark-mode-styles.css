@@ -44,6 +44,10 @@ body{
 .form-input, .phone-container{
     background-color: var(--var-card-dark-bg);
 }
+.brief-input, .brief-phone-container{
+    background-color: var(--var-body-dark-bg);
+    color: var(--var-body-dark-fc);
+}
 .arrow{
     height: 7px;
     background-image: url(/assets/arrow-dark.svg);
